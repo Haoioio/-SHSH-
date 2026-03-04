@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Cydia SHSH查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="https://cydia.saurik.com/favicon.ico" type="image/x-icon">
+    <script src="./js/cydia-shsh-query.js"></script>
+    <link rel="stylesheet" href="./css/styles_Cydia.css">
+</head>
+<body>
+    <div class="box">
+        <h2>Cydia SHSH查询</h2>
+        <h5>来源: <a href="https://cydia.saurik.com" target="_blank" rel="noopener noreferrer" style="color: #007BFF;">Cydia</a></h5>
+        
+        <div class="button-container">
+            <!-- 包裹内容到button-content span中 -->
+            <a href="./tssSHSH.html" class="query-button button-tsssaver">
+                <span class="button-content">
+                    <img src="data:image/png;base64,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" class="button-icon" alt="TSS图标">
+                    TSS查询
+                </span>
+            </a>
+            <a href="./i4SHSH.html" class="query-button button-aisi">
+                <span class="button-content">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUwRDNFQzlBNENCMDExRTZCQ0UzODdFMTY1QkNBRjFDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUwRDNFQzlBNENCMDExRTZCQ0UzODdFMTY1QkNBRjFDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTBEM0VDOTg0Q0IwMTFFNkJDRTM4N0UxNjVCQ0FGMUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTBEM0VDOTk0Q0IwMTFFNkJDRTM4N0UxNjVCQ0FGMUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+ IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+ 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" class="button-icon" alt="爱思图标">
+                    爱思查询
+                </span>
+            </a>
+        </div>
+        
+        <form id="queryForm" onsubmit="handleSubmit(event)">
+            <input type="text" id="ecid" placeholder="输入ECID" required>
+            <button type="submit" class="button">立即查询</button>
+        </form>
+        
+        <div id="queryResultContainer"></div>
+    </div>
+    <footer class="footer vertical-center">
+    <div class="text-gray-400 text-sm mb-1 copyright">
+        Copyright &copy; 2017~2026    </div>
+    <div class="text-gray-500 text-xs mb-1">
+        Kuzaos All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

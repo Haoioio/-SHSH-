@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>爱思SHSH2查询</title>
+    <!-- 引入必要库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style type="text/css">
+        * {user-select: auto !important; -webkit-user-select: auto !important;}
+    </style><input type="hidden" id="inject_idm_text_selection">
+    <style></style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/base64-js/1.5.1/base64.min.js"></script>
+    <script src="./js/3des.js"></script>
+    <script src="./js/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="./css/styles_i4.css">
+</head>
+
+<body>
+    <!-- 新增外层容器用于宽度控制 -->
+    <div class="page-wrapper">
+        <div class="container">
+            <h2 class="block-title">爱思SHSH2查询</h2>
+            <div class="button-container">
+                <a href="./CydiaSHSH.html" class="query-button button-tsssaver">
+                    <span class="button-content">
+                        <img src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABda5MTO0dopC45UvA0Plr1ND5a9TdCXfU1QFv1NkFd9TVAW/Q2QV71OUNg9TQ/W/QyPVj0LjdR8DxHZqRQXZMTMDpaqUxXfP9hb5v/Y3Of/19unf9fcJ//WWeV/1VmlP9WZZT/W22c/2BvoP9fbZv/X2+c/19vm/9IVHj/LjpcqR4nQexZaJL/P09//zVHd/88SXX/lJu1/+Tm7v///////////+Xn7v+Wnbn/OUZ0/zZHdv87THz/UmKP/x0lPusbIz7xSVuG/zBBbf9OWn7/4+Xr/8nN2P9teZz/LkBx/y9Acv9we5//yczY/+Tm7P9QXID/L0Bu/0pdh/8bIz7xGCE58jxPef8sN13/4uTp/5KasP8rOWn/LT1w/19rlf88THv/KDtr/yo4ZP+Tm7H/4+Tq/y89YP87T3f/FR438RIbMfMxQmn/iZCh/8XI0v8fMFn/L0Bv/7W7zv/Kz9z//P39/7O5yv9RX4H/HSxV/8XI0f+Kj6H/L0Fp/xEbMvIOFiryITNY/+Di5v9eZn7/HCxW/5yiuP/8/f3/xcrZ/73D0//Kztr/o6m7/xYlS/9cZn3/4eLn/yg5YP8PGC7yCxIm8xgpTv//////EB0//xUjTP+GjqT/y8/a/5igu//T1uL//////+jq7v88RWT/Dxo8//////8cLFP/CxIo8wkQJfImNFX//////y44Wv+Cjaj/4uTt/6iy0f/r7fb/z9Xp/7rC2f+/xNX/QEx0/yo1VP//////IzJU/wkPI/MmLUDzW2SC/+bn6/98hJz/UmCH/7zC1v/b3+3/usXi/7rD4P/n6/P/t77R/4SNqP96gpn/5ujr/15ohf8pMEL1Nz1Q9m55mP+lq7z/1Nbf/2Nwk/+Rm7j/sLnR/9PY5v/a3+z/t7/U/5+mv/9baIr/09be/6arvf9we5n/NTxQ9T9GWfaGkKz/aHOT/+vs8f+1vcz/bHqa/3iFpP+PnLX/pbDE/3OCof9odZb/srjJ/+3u8v9td5b/g46r/0FHWvZKUGL3lp+8/3qGp/+LlbH/7e/z/9zf5/+jq8H/eYWk/3uFpf+hqMD/3N/n/+7v9P+Kk6//f4ur/5ihvP9JT2H3SU9g86Cqw/+RnL3/hpO1/4SQsv++w9X/8PH1////////////7/D1/77E1v+HkrT/ipa4/42Zu/+hqsT/TFJi82dvgaqGjKL/pbDJ/6ixzv+nsM7/o63J/6Gsx/+dqMT/oa3K/6Cqx/+krcr/prDN/6mzz/+krsn/hYyi/2dtgaqGk64TaXGEpFFXZ/FcYnP5XmR2+WJod/lkaXj6ZGp5+WZqefpjaXj5YGd2+V1kdPlcYXP5VVpo8WRsgKeGk64TAAAAAAAAAAAAALMTAAAAAAAAshMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC6EwAAAAAAAAAAAAAAAA==" class="button-icon" alt="Cydia图标">
+                        Cydia查询
+                    </span>
+                </a>
+                <a href="./tssSHSH.html" class="query-button button-tsssaver">
+                    <span class="button-content">
+                        <img src="data:image/png;base64,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" class="button-icon" alt="TSS图标">
+                        TSS查询
+                    </span>
+                </a>
+            </div>
+            <div class="data-source"><a href="https://223.85.20.43:23415" target="_self">刷机工具下载</a></div>
+            <div class="data-source"><a href="https://223.85.20.43:23415/Kz/i4SHSH/old/" target="_self">旧版本爱思查询</a></div>
+
+            <!-- 浏览器兼容性提示 -->
+            <div id="browserCompatWarning" class="browser-error" style="display: none;"></div>
+
+            <!-- 查询表单 -->
+            <form id="queryForm">
+                <input type="hidden" id="encrypt_param" name="encrypt_param" value="">
+                <input type="hidden" id="intecid" name="intecid" value="">
+                <input type="hidden" id="post_model" name="post_model" value="">
+                <input type="hidden" name="is_ajax" value="true">
+                <input type="hidden" name="page" id="currentPage" value="1">
+
+                <!-- ECID输入框 -->
+                <div class="form-group">
+                    <label for="ecid">ECID (十进制或十六进制)</label>
+                    <input type="text" id="ecid" placeholder="输入正确的ECID值" name="ecid" value="">
+                </div>
+
+                <!-- 设备型号选择框 -->
+                <div class="form-group">
+                    <label for="model">设备型号</label>
+                    <select id="model">
+                        <optgroup label="iPhone">
+                            <option value="iPhone1,1">iPhone 2G - iPhone1,1</option>
+                            <option value="iPhone1,2">iPhone 3G - iPhone1,2</option>
+                            <option value="iPhone2,1">iPhone 3GS - iPhone2,1</option>
+                            <option value="iPhone3,1">iPhone 4 [GSM] - iPhone3,1</option>
+                            <option value="iPhone3,3">iPhone 4 [CDMA] - iPhone3,3</option>
+                            <option value="iPhone4,1">iPhone 4S - iPhone4,1</option>
+                            <option value="iPhone3,2">iPhone 4 [GSM_2012] - iPhone3,2</option>
+                            <option value="iPhone5,1">iPhone 5 [GSM] - iPhone5,1</option>
+                            <option value="iPhone5,2">iPhone 5 [Global] - iPhone5,2</option>
+                            <option value="iPhone6,2">iPhone 5s [Global] - iPhone6,2</option>
+                            <option value="iPhone5,3">iPhone 5c [GSM] - iPhone5,3</option>
+                            <option value="iPhone5,4">iPhone 5c [Global] - iPhone5,4</option>
+                            <option value="iPhone6,1">iPhone 5s [GSM] - iPhone6,1</option>
+                            <option value="iPhone7,1">iPhone 6+ - iPhone7,1</option>
+                            <option value="iPhone7,2">iPhone 6 - iPhone7,2</option>
+                            <option value="iPhone8,1">iPhone 6s - iPhone8,1</option>
+                            <option value="iPhone8,2">iPhone 6s+ - iPhone8,2</option>
+                            <option value="iPhone8,4">iPhone SE - iPhone8,4</option>
+                            <option value="iPhone9,1">iPhone 7 [Global] - iPhone9,1</option>
+                            <option value="iPhone9,2">iPhone 7 Plus [Global] - iPhone9,2</option>
+                            <option value="iPhone9,3">iPhone 7 [GSM] - iPhone9,3</option>
+                            <option value="iPhone9,4">iPhone 7 Plus [GSM] - iPhone9,4</option>
+                            <option value="iPhone10,1">iPhone 8 [Global] - iPhone10,1</option>
+                            <option value="iPhone10,4">iPhone 8 [GSM] - iPhone10,4</option>
+                            <option value="iPhone10,5">iPhone 8 Plus [GSM] - iPhone10,5</option>
+                            <option value="iPhone10,2">iPhone 8 Plus [Global] - iPhone10,2</option>
+                            <option value="iPhone10,3">iPhone X [Global] - iPhone10,3</option>
+                            <option value="iPhone10,6">iPhone X [GSM] - iPhone10,6</option>
+                        </optgroup>
+                        <optgroup label="iPad">
+                            <option value="iPad1,1">iPad 1 - iPad1,1</option>
+                            <option value="iPad2,1">iPad 2 [WiFi] - iPad2,1</option>
+                            <option value="iPad2,2">iPad 2 [GSM] - iPad2,2</option>
+                            <option value="iPad2,3">iPad 2 [CDMA] - iPad2,3</option>
+                            <option value="iPad2,4">iPad 2 [Mid 2012] - iPad2,4</option>
+                            <option value="iPad3,1">iPad 3 [WiFi] - iPad3,1</option>
+                            <option value="iPad3,2">iPad 3 [CDMA] - iPad3,2</option>
+                            <option value="iPad3,3">iPad 3 [GSM] - iPad3,3</option>
+                            <option value="iPad2,5">iPad mini [WiFi] - iPad2,5</option>
+                            <option value="iPad2,6">iPad mini [GSM] - iPad2,6</option>
+                            <option value="iPad2,7">iPad mini [Global] - iPad2,7</option>
+                            <option value="iPad3,4">iPad 4 [WiFi] - iPad3,4</option>
+                            <option value="iPad3,5">iPad 4 [GSM] - iPad3,5</option>
+                            <option value="iPad3,6">iPad 4 [Global] - iPad3,6</option>
+                            <option value="iPad4,4">iPad mini 2 [WiFi] - iPad4,4</option>
+                            <option value="iPad4,5">iPad mini 2 [Cellular] - iPad4,5</option>
+                            <option value="iPad4,1">iPad Air [WiFi] - iPad4,1</option>
+                            <option value="iPad4,2">iPad Air [Cellular] - iPad4,2</option>
+                            <option value="iPad4,3">iPad Air [China] - iPad4,3</option>
+                            <option value="iPad4,6">iPad mini 2 [China] - iPad4,6</option>
+                            <option value="iPad4,7">iPad mini 3 [WiFi] - iPad4,7</option>
+                            <option value="iPad4,8">iPad mini 3 [Cellular] - iPad4,8</option>
+                            <option value="iPad4,9">iPad mini 3 [China] - iPad4,9</option>
+                            <option value="iPad5,3">iPad Air 2 [WiFi] - iPad5,3</option>
+                            <option value="iPad5,4">iPad Air 2 [Cellular] - iPad5,4</option>
+                            <option value="iPad5,1">iPad mini 4 [WiFi] - iPad5,1</option>
+                            <option value="iPad5,2">iPad mini 4 [Cellular] - iPad5,2</option>
+                            <option value="iPad6,7">iPad Pro 12.9-inch [WiFi] - iPad6,7</option>
+                            <option value="iPad6,8">iPad Pro 12.9-inch [Cellular] - iPad6,8</option>
+                            <option value="iPad6,4">iPad Pro 9.7-inch [Cellular] - iPad6,4</option>
+                            <option value="iPad6,3">iPad Pro 9.7-inch [WiFi] - iPad6,3</option>
+                            <option value="iPad6,11">iPad 5 [WiFi] - iPad6,11</option>
+                            <option value="iPad6,12">iPad 5 [Cellular] - iPad6,12</option>
+                            <option value="iPad7,2">iPad Pro 2 [12.9-inch, Cellular] - iPad7,2</option>
+                            <option value="iPad7,4">iPad Pro [10.5-inch, Cellular] - iPad7,4</option>
+                            <option value="iPad7,3">iPad Pro [10.5-inch, WiFi] - iPad7,3</option>
+                            <option value="iPad7,1">iPad Pro 2 [12.9-inch, WiFi] - iPad7,1</option>
+                            <option value="iPad7,5">iPad 6 [WiFi] - iPad7,5</option>
+                            <option value="iPad7,6">iPad 6 [Cellular] - iPad7,6</option>
+                            <option value="iPad7,12">iPad 7 [Cellular] - iPad7,12</option>
+                            <option value="iPad7,11">iPad 7 [WiFi] - iPad7,11</option>
+                        </optgroup>
+                        <optgroup label="iPod">
+                            <option value="iPod1,1">iPod touch 1G - iPod1,1</option>
+                            <option value="iPod2,1">iPod touch 2G - iPod2,1</option>
+                            <option value="iPod3,1">iPod touch 3 - iPod3,1</option>
+                            <option value="iPod4,1">iPod touch 4 - iPod4,1</option>
+                            <option value="iPod5,1">iPod touch 5 - iPod5,1</option>
+                            <option value="iPod7,1">iPod touch 6 - iPod7,1</option>
+                        </optgroup>
+                        <optgroup label="Apple TV">
+                            <option value="AppleTV2,1">Apple TV 2G - AppleTV2,1</option>
+                            <option value="AppleTV3,1">Apple TV 3 - AppleTV3,1</option>
+                            <option value="AppleTV3,2">Apple TV 3 [2013] - AppleTV3,2</option>
+                            <option value="AppleTV5,3">Apple TV 4 [2015] - AppleTV5,3</option>
+                            <option value="AppleTV6,2">Apple TV 4K - AppleTV6,2</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn" id="submitBtn">提交查询</button>
+            </form>
+
+            <!-- 查询结果 -->
+            <div id="resultContainer" style="display: none;">
+            </div>
+
+            <!-- 页脚 -->
+            <footer>
+                <p>原始项目: </p>
+                <p><a href="https://github.com/j1ans/SHSHChecker" target="_blank">https://github.com/j1ans/SHSHChecker</a></p><br>
+                <p>数据信息: </p>
+                <p><a href="https://www.i4.cn/" target="_blank">https://www.i4.cn/</a></p><br>
+                <p>Apple信息记录网站: </p>
+                <p><a href="https://theapplewiki.com" target="_blank">https://theapplewiki.com</a></p>
+            </footer>
+            <footer>
+                <p>Copyright © 2017~2026 Kuzaos. </p>
+                <p>All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // 浏览器检测与兼容性处理
+        (function() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isIE = userAgent.indexOf('msie') !== -1 || userAgent.indexOf('trident') !== -1;
+            var isSafari = userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1;
+            var isOldSafari = isSafari && (
+                userAgent.indexOf('version/5') !== -1 || 
+                userAgent.indexOf('version/6') !== -1
+            );
+            var warningEl = document.getElementById('browserCompatWarning');
+            
+            // 对不支持的浏览器显示警告
+            if (isIE && (userAgent.indexOf('msie 9') !== -1 || userAgent.indexOf('msie 8') !== -1)) {
+                warningEl.textContent = '检测到您使用的浏览器版本过低，可能无法正常使用下载功能。建议升级浏览器。';
+                warningEl.style.display = 'block';
+            }
+            
+            // 全局浏览器标识
+            window.browserInfo = {
+                isIE: isIE,
+                isSafari: isSafari,
+                isOldSafari: isOldSafari,
+                supportsBlob: typeof Blob !== 'undefined',
+                supportsDownloadAttribute: 'download' in document.createElement('a')
+            };
+        })();
+        
+        // 兼容性处理：为旧浏览器添加Array.prototype.forEach支持
+        if (!Array.prototype.forEach) {
+            Array.prototype.forEach = function(callback, thisArg) {
+                for (var k = 0; k < this.length; k++) {
+                    if (k in this) callback.call(thisArg, this[k], k, this);
+                }
+            };
+        }
+        
+        // 核心变量
+        var ecidInput = document.getElementById('ecid');
+        var intecidInput = document.getElementById('intecid');
+        var postModelInput = document.getElementById('post_model');
+        var queryForm = document.getElementById('queryForm');
+        var submitBtn = document.getElementById('submitBtn');
+        var resultContainer = document.getElementById('resultContainer');
+        var currentPageInput = document.getElementById('currentPage');
+        var batchDownloadBtn, downloadProgress, progressBar, progressText;
+        
+        // 工具函数
+        function addEvent(element, event, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(event, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + event, handler);
+            } else {
+                element['on' + event] = handler;
+            }
+        }
+        
+        function findParent(element, tagName) {
+            tagName = tagName.toUpperCase();
+            while (element && element.nodeName !== tagName) {
+                element = element.parentNode;
+            }
+            return element;
+        }
+        
+        // 表单提交处理
+        addEvent(queryForm, 'submit', function(e) {
+            if (e.preventDefault) e.preventDefault();
+            else e.returnValue = false;
+            
+            if (!post_encrypt_data()) return;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = '查询中...';
+            
+            var formData = new FormData(queryForm);
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('POST', './index.php', true);
+            xhr.overrideMimeType('application/json');
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '提交查询';
+                    
+                    if (xhr.status === 200) {
+                        try {
+                            var data = JSON.parse(xhr.responseText);
+                            resultContainer.style.display = 'block';
+                            
+                            if (data.success) {
+                                resultContainer.innerHTML = data.content;
+                                intecidInput.value = data.ecid;
+                                postModelInput.value = data.model;
+                                currentPageInput.value = data.current_page;
+                                bindTableEvents();
+                                bindBatchDownloadEvent();
+                            } else {
+                                resultContainer.innerHTML = '<div class="error-notification">' + data.message + '</div>';
+                            }
+                        } catch (e) {
+                            resultContainer.innerHTML = '<div class="error-notification">解析失败: ' + (e.message || '未知错误') + '</div>';
+                        }
+                    } else {
+                        resultContainer.innerHTML = '<div class="error-notification">查询失败，状态码: ' + xhr.status + '</div>';
+                    }
+                }
+            };
+            
+            xhr.send(formData);
+        });
+        
+        // 数据加密处理
+        function post_encrypt_data() {
+            var ecidInputValue = ecidInput.value.trim();
+            if (!ecidInputValue) {
+                alert('请输入ECID');
+                return false;
+            }
+        
+            // ECID格式转换
+            var ecidHex, ecid;
+            if (/^\d+$/.test(ecidInputValue)) {
+                ecid = parseInt(ecidInputValue, 10);
+                ecidHex = ecid.toString(16).toUpperCase();
+            } else {
+                ecid = parseInt(ecidInputValue, 16);
+                if (isNaN(ecid)) {
+                    alert('ECID格式错误，请输入有效的十进制或十六进制值');
+                    return false;
+                }
+                ecidHex = ecidInputValue.toUpperCase();
+            }
+        
+            var model = document.getElementById('model').value;
+            var encrypt_param = encrypt_3DES(
+                JSON.stringify({ecid: ecid, model: model, time: Date.now()}),
+                '2015aisi1234sj7890smartflashi4pc',
+                0, 1, 0
+            );
+        
+            document.getElementById('encrypt_param').value = encrypt_param;
+            document.getElementById('intecid').value = ecid;
+            document.getElementById('post_model').value = model;
+            return true;
+        }
+        
+        // 获取Generator值
+        function fetchGenerator(iosVersion, ecid, model, callback) {
+            var encryptData = {
+                ecid: parseInt(ecid, 16),
+                model: model,
+                time: Date.now(),
+                ios: iosVersion
+            };
+            
+            var encryptParam = encrypt_3DES(
+                JSON.stringify(encryptData),
+                '2015aisi1234sj7890smartflashi4pc',
+                0, 1, 0
+            );
+            
+            var proxyUrl = './api/proxy.php?url=' + encodeURIComponent(
+                'https://i4tool2.i4.cn/downloadConvertSHSH.xhtml?param=' + encodeURIComponent(encryptParam)
+            );
+        
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('GET', proxyUrl);
+            xhr.overrideMimeType('application/json');
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            var jsonResponse = JSON.parse(xhr.responseText);
+                            if (!jsonResponse.shsh) {
+                                callback(new Error('服务器返回无效的SHSH数据'));
+                                return;
+                            }
+                            
+                            // 解析generator
+                            var generator = '未知generator';
+                            try {
+                                var shshContent = jsonResponse.shsh;
+                                var startIndex = shshContent.indexOf('<key>generator</key>');
+                                if (startIndex !== -1) {
+                                    var stringStart = shshContent.indexOf('<string>', startIndex) + 8;
+                                    var stringEnd = shshContent.indexOf('</string>', stringStart);
+                                    if (stringStart !== -1 && stringEnd !== -1) {
+                                        generator = shshContent.substring(stringStart, stringEnd);
+                                    }
+                                }
+                            } catch (e) {}
+        
+                            var downloadUrl = './api/plist.php?param=' + encodeURIComponent(encryptParam) + '&ecid=' + encodeURIComponent(ecid) + '&model=' + encodeURIComponent(model) + '&ios=' + encodeURIComponent(iosVersion);
+                            var encryptedUrl = 'https://i4tool2.i4.cn/downloadConvertSHSH.xhtml?param=' + encodeURIComponent(encryptParam);
+                            
+                            window.shshUrls = window.shshUrls || {};
+                            window.shshUrls[iosVersion] = {downloadUrl: downloadUrl, encryptedUrl: encryptedUrl, content: jsonResponse.shsh};
+                            
+                            callback(null, {generatorValue: generator, downloadUrl: downloadUrl, encryptedUrl: encryptedUrl, content: jsonResponse.shsh});
+                        } catch (e) {
+                            callback(new Error('解析失败: ' + (e.message || '未知错误')));
+                        }
+                    } else {
+                        callback(new Error('请求失败: HTTP状态 ' + xhr.status));
+                    }
+                }
+            };
+            
+            xhr.onerror = function() {
+                callback(new Error('网络请求失败'));
+            };
+            
+            xhr.send();
+        }
+        
+        // 批量获取Generator
+        function fetchAllGenerators() {
+            var rows = document.getElementsByTagName('tr');
+            var model = postModelInput.value;
+            var ecidHex = ecidInput.value.trim();
+            
+            if (/^\d+$/.test(ecidHex)) {
+                ecidHex = parseInt(ecidHex, 10).toString(16).toUpperCase();
+            }
+            
+            [].forEach.call(rows, function(row) {
+                var iosVersion = row.getAttribute('data-ios-version');
+                if (!iosVersion) return;
+                
+                var genCell = row.querySelector('.gen-value');
+                if (!genCell) return;
+                
+                fetchGenerator(iosVersion, ecidHex, model, function(error, result) {
+                    if (error) {
+                        genCell.innerHTML = '<span class="gen-error">获取失败: ' + error.message + '</span>';
+                    } else {
+                        genCell.innerHTML = result.generatorValue;
+                        row.setAttribute('data-download-url', result.downloadUrl);
+                        row.setAttribute('data-encrypted-url', result.encryptedUrl);
+                        row.setAttribute('data-shsh-content', result.content);
+                    }
+                });
+            });
+        }
+        
+        // 切换分页
+        function changePage(page) {
+            currentPageInput.value = page;
+            if (queryForm.dispatchEvent) {
+                var event = new Event('submit');
+                queryForm.dispatchEvent(event);
+            } else {
+                queryForm.fireEvent('onsubmit');
+            }
+        }
+        
+        // 表格事件绑定
+        function bindTableEvents() {
+            // 下载按钮与版本号点击（点击整个iOS版本单元格都能触发）
+            var table = document.querySelector('.result-table');
+            if (table) {
+                addEvent(table, 'click', function(e) {
+                    var target = e.target || e.srcElement;
+                    if (target.classList.contains('version-btn')) {
+                        var row = findParent(target, 'tr');
+                        if (row) {
+                            var version = target.getAttribute('data-version');
+                            var downloadUrl = row.getAttribute('data-download-url');
+                            downloadSHSH(version, downloadUrl);
+                        }
+                    } else if (target.closest('.ios-version-cell')) {
+                        // 点击iOS版本单元格内任意元素（版本号/编译号）都能打开源文件
+                        var row = findParent(target, 'tr');
+                        if (row) {
+                            var url = row.getAttribute('data-encrypted-url');
+                            if (url) {
+                                var newWindow = window.open(url, '_blank');
+                                if (!newWindow) {
+                                    alert('浏览器阻止了弹出窗口，请允许弹出窗口后重试');
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // 分页按钮
+            var pagination = document.querySelector('.pagination');
+            if (pagination) {
+                addEvent(pagination, 'click', function(e) {
+                    var target = e.target || e.srcElement;
+                    if (target.classList.contains('page-btn') && !target.classList.contains('disabled')) {
+                        var page = target.getAttribute('data-page');
+                        if (page) changePage(page);
+                    }
+                });
+            }
+            
+            fetchAllGenerators();
+        }
+        
+        // 绑定批量下载事件
+        function bindBatchDownloadEvent() {
+            batchDownloadBtn = document.getElementById('batchDownloadBtn');
+            downloadProgress = document.getElementById('downloadProgress');
+            progressBar = document.querySelector('.progress-bar');
+            progressText = document.querySelector('.progress-text');
+            
+            if (batchDownloadBtn) {
+                addEvent(batchDownloadBtn, 'click', function() {
+                    downloadProgress.style.display = 'block';
+                    progressBar.style.width = '0%';
+                    progressText.textContent = '准备中...';
+                    batchDownloadBtn.disabled = true;
+                    downloadAllSHSH();
+                });
+            }
+        }
+        
+        // 批量下载所有SHSH
+        function downloadAllSHSH() {
+            var totalPagesText = document.querySelector('.current-page-info').textContent;
+            var totalPagesMatch = totalPagesText.match(/第 \d+ \/ (\d+) 页/);
+            var totalPages = totalPagesMatch ? parseInt(totalPagesMatch[1]) : 1;
+            
+            var allIosVersions = [];
+            var model = postModelInput.value;
+            var ecidHex = ecidInput.value.trim();
+            
+            if (/^\d+$/.test(ecidHex)) {
+                ecidHex = parseInt(ecidHex, 10).toString(16).toUpperCase();
+            }
+            
+            var zip = new JSZip();
+            var completedCount = 0;
+            
+            // 递归获取所有页面数据
+            function fetchPageData(page) {
+                progressText.textContent = '正在加载第 ' + page + '/' + totalPages + ' 页数据...';
+                
+                var originalPage = parseInt(currentPageInput.value);
+                currentPageInput.value = page;
+                
+                var formData = new FormData(queryForm);
+                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+                xhr.open('POST', './index.php', true);
+                xhr.overrideMimeType('application/json');
+                
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        try {
+                            var data = JSON.parse(xhr.responseText);
+                            
+                            if (data.success && data.valid_items && data.valid_items.length > 0) {
+                                allIosVersions = allIosVersions.concat(data.valid_items);
+                            }
+                            
+                            if (page >= totalPages) {
+                                progressText.textContent = '发现 ' + allIosVersions.length + ' 个SHSH文件，开始下载...';
+                                progressBar.style.width = '30%';
+                                currentPageInput.value = originalPage;
+                                downloadAllVersions();
+                            } else {
+                                fetchPageData(page + 1);
+                            }
+                        } catch (e) {
+                            alert('获取第 ' + page + ' 页数据失败: ' + e.message);
+                            resetDownloadUI();
+                        }
+                    } else if (xhr.readyState === 4) {
+                        alert('获取第 ' + page + ' 页数据失败，状态码: ' + xhr.status);
+                        resetDownloadUI();
+                    }
+                };
+                
+                xhr.send(formData);
+            }
+            
+            // 下载所有版本的SHSH
+            function downloadAllVersions() {
+                if (allIosVersions.length === 0) {
+                    alert('没有找到可下载的SHSH文件');
+                    resetDownloadUI();
+                    return;
+                }
+                
+                allIosVersions.forEach(function(version) {
+            fetchGenerator(version, ecidHex, model, function(error, result) {
+        completedCount++;
+        var progress = 30 + Math.round((completedCount / allIosVersions.length) * 70);
+        progressBar.style.width = progress + '%';
+        progressText.textContent = '正在下载: ' + completedCount + '/' + allIosVersions.length;
+        
+        if (!error && result && result.content) {
+            // 解析版本号和编译号（支持 "5.0.1 (9A405)" 和 "5.0.1/9A405" 两种格式）
+            let versionNumber = version;
+            let buildNumber = '';
+            const versionMatch = version.match(/^([\d.]+)\s*[\/(]\s*([\w\d]+)\s*[)]?$/);
+            
+            if (versionMatch) {
+                versionNumber = versionMatch[1]; // 提取主版本号（如5.0.1）
+                buildNumber = versionMatch[2];   // 提取编译号（如9A405）
+            }
+            
+            // 清理特殊字符，确保文件名合法
+            const safeEcid = ecidHex.replace(/[^a-zA-Z0-9]/g, '');
+            const safeModel = model.replace(/[^a-zA-Z0-9,_-]/g, '');
+            const safeVersion = versionNumber.replace(/[^a-zA-Z0-9.]/g, '');
+            const safeBuild = buildNumber.replace(/[^a-zA-Z0-9]/g, '');
+            
+            // 构建最终文件名（格式：ECID_设备型号_版本号_编译号.plist）
+            let fileName = `${safeEcid}_${safeModel}_${safeVersion}`;
+            // 如果有编译号则添加，否则只保留到版本号
+            if (safeBuild) {
+                fileName += `_${safeBuild}`;
+            }
+            fileName += '.plist';
+            
+            zip.file(fileName, result.content);
+        }
+        
+        if (completedCount === allIosVersions.length) {
+            generateAndDownloadZip(zip, ecidHex, model);
+        }
+            });
+        });
+            }
+            
+            fetchPageData(1);
+        }
+        
+        // 生成并下载ZIP文件
+        function generateAndDownloadZip(zip, ecid, model) {
+            var zipName = 'SHSH2_' + ecid + '_' + model + '_' + new Date().getTime() + '.zip';
+            
+            if (Object.keys(zip.files).length === 0) {
+                alert('没有成功获取到任何SHSH文件，无法生成ZIP包');
+                resetDownloadUI();
+                return;
+            }
+            
+            progressText.textContent = '正在生成ZIP文件...';
+            
+            if (window.browserInfo.isOldSafari) {
+                zip.generateAsync({type: "base64"}, function(metadata) {
+                    var percent = Math.round(metadata.percent);
+                    progressBar.style.width = percent + '%';
+                    progressText.textContent = '正在生成ZIP: ' + percent + '%';
+                }).then(function(content) {
+                    var a = document.createElement("a");
+                    a.href = "data:application/zip;base64," + content;
+                    a.target = "_blank";
+                    if (window.browserInfo.supportsDownloadAttribute) a.download = zipName;
+                    
+                    document.body.appendChild(a);
+                    a.click ? a.click() : (function(a) {
+                        var evt = document.createEvent('MouseEvents');
+                        evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                        a.dispatchEvent(evt);
+                    })(a);
+                    
+                    document.body.removeChild(a);
+                    progressText.textContent = '下载完成!';
+                    setTimeout(resetDownloadUI, 2000);
+                }).catch(function(error) {
+                    alert('ZIP生成失败: ' + (error.message || '未知错误'));
+                    resetDownloadUI();
+                });
+            } else {
+                zip.generateAsync({type: "blob"}, function(metadata) {
+                    var percent = Math.round(metadata.percent);
+                    progressBar.style.width = percent + '%';
+                    progressText.textContent = '正在生成ZIP: ' + percent + '%';
+                }).then(function(content) {
+                    var a = document.createElement("a");
+                    var url = URL.createObjectURL(content);
+                    a.href = url;
+                    if (window.browserInfo.supportsDownloadAttribute) a.download = zipName;
+                    
+                    document.body.appendChild(a);
+                    a.click ? a.click() : (function(a) {
+                        var evt = document.createEvent('MouseEvents');
+                        evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                        a.dispatchEvent(evt);
+                    })(a);
+                    
+                    setTimeout(function() {
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }, 100);
+                    
+                    progressText.textContent = '下载完成!';
+                    setTimeout(resetDownloadUI, 2000);
+                }).catch(function(error) {
+                    alert('ZIP生成失败: ' + (error.message || '未知错误'));
+                    resetDownloadUI();
+                });
+            }
+        }
+        
+        // 重置下载UI状态
+        function resetDownloadUI() {
+            if (batchDownloadBtn) batchDownloadBtn.disabled = false;
+            if (downloadProgress) downloadProgress.style.display = 'none';
+            if (progressBar) progressBar.style.width = '0%';
+            if (progressText) progressText.textContent = '准备中...';
+        }
+        
+        // 下载单个SHSH文件
+        function downloadSHSH(version, downloadUrl) {
+            if (!downloadUrl) {
+                alert('下载链接获取失败，请稍后重试');
+                return;
+            }
+            
+            // 32位设备判断（A6及以下处理器设备）
+            const model = postModelInput.value;
+            const is32BitDevice = [
+                // iPhone
+                'iPhone1,1', 'iPhone1,2', 
+                'iPhone2,1', 
+                'iPhone3,1', 'iPhone3,2', 'iPhone3,3',
+                'iPhone4,1',
+                'iPhone5,1', 'iPhone5,2', 'iPhone5,3', 'iPhone5,4',
+                
+                // iPad
+                'iPad1,1',
+                'iPod2,1',
+                'iPod3,1',
+                'iPod4,1',
+                'iPod5,1',
+                
+                // Apple TV
+                'AppleTV2,1',
+                'AppleTV3,1', 'AppleTV3,2'
+            ].includes(model);
+        
+            if (is32BitDevice) {
+                alert('注意：32位设备（A6及以下处理器）的SHSH文件需要修复后才能使用');
+            }
+            
+            if (window.browserInfo.isSafari || window.browserInfo.isIE) {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = downloadUrl;
+                document.body.appendChild(iframe);
+                setTimeout(function() { document.body.removeChild(iframe); }, 3000);
+            } else {
+                var a = document.createElement("a");
+                a.href = downloadUrl;
+                a.download = ecidInput.value.trim() + '_' + postModelInput.value + '_' + version.replace(/\s+/g, '_') + '.plist';
+                document.body.appendChild(a);
+                a.click ? a.click() : (function(a) {
+                    var evt = document.createEvent('MouseEvents');
+                    evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                    a.dispatchEvent(evt);
+                })(a);
+                document.body.removeChild(a);
+            }
+        }
+        
+        // 初始绑定
+        bindTableEvents();
+        bindBatchDownloadEvent();
+    </script>
+
+</body>
+
+</html>

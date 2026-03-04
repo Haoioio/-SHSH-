@@ -1,0 +1,268 @@
+    /* 查询按钮基础样式 */
+    .query-button {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 5px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        width: auto;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    /* 按钮悬停效果 */
+    .query-button:hover {
+        background-color: #0069d9;
+    }
+    
+    /* TSS查询按钮的自定义样式 */
+    .button-tsssaver {
+        background-color: #444;
+    }
+    
+    /* TSS查询按钮悬停效果 */
+    .button-tsssaver:hover {
+        background-color: #ff4e4e;
+    }
+    
+    /* 爱思查询按钮的自定义样式 */
+    .button-aisi {
+        background-color: #444;
+    }
+    
+    /* 爱思查询按钮悬停效果 */
+    .button-aisi:hover {
+        background-color: #38b000;
+    }
+    
+    /* 按钮容器样式 */
+    .button-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    /* 按钮内容包裹器 - 解决iOS7垂直对齐问题 */
+    .button-content {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    /* 按钮图标样式 */
+    .button-icon {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 0px;
+    }
+    
+    /* 全局基础样式 */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* 页面主体样式 */
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: #1c1c1e;
+        color: white;
+        line-height: 1.5;
+        margin: 3%;
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    /* 主要内容容器样式 */
+    .box {
+        max-width: 500px;
+        margin: auto auto;
+        padding: 30px;
+        margin-top: 15px;
+        background-color: black;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    /* 表单元素统一样式 */
+    input, select, textarea, button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #444;
+        color: white;
+    }
+    
+    /* 按钮基础样式 */
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .button:hover {
+        background-color: #004080;
+    }
+    
+    /* 表格样式 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin: 0;
+        border: 1px solid #444;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+        border: 1px solid #444;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    th {
+        background-color: #444;
+        color: white;
+    }
+    
+    /* 加载指示器动画 */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .animate-spin {
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+        border: 3px solid transparent;
+        border-top-color: #60a5fa;
+        border-bottom-color: #60a5fa;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* 查询结果大标题样式 */
+    #queryResultContainer h3 {
+        font-size: 1.4em;
+        margin-bottom: 6px;
+        color: #60a5fa;
+    }
+    
+    /* 查询结果小标题样式 */
+    #queryResultContainer p {
+        font-size: 0.9em;
+        color: #aaa;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+    
+    /* 表格头部强化样式 */
+    #queryResultContainer table th {
+        background-color: #333 !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 8px !important;
+        border: 1px solid #555 !important;
+    }
+    
+    /* 表格单元格强化样式 */
+    #queryResultContainer table td {
+        padding: 8px !important;
+        border: 1px solid #555 !important;
+        color: white !important;
+    }
+    
+    /* 下载链接按钮样式 */
+    #queryResultContainer table a {
+        color: #60a5fa !important;
+        text-decoration: none !important;
+        font-weight: bold !important;
+        padding: 4px 8px !important;
+        border: 1px solid #60a5fa !important;
+        border-radius: 3px !important;
+        display: inline-block !important;
+    }
+    
+    /* 下载链接悬停样式 */
+    #queryResultContainer table a:hover {
+        background-color: #60a5fa !important;
+        color: black !important;
+    }
+    
+    
+   /* 页脚基础样式 - 兼容iOS5 */
+footer {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px 0;
+    color: #444;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    height: auto;
+    position: relative;
+}
+
+/* 响应式适配 - 小屏幕优化 */
+@media (max-width: 600px) {
+    footer {
+        font-size: 12px;
+        margin-top: 30px;
+        padding: 15px 0;
+    }
+}
+
+/* 版权信息容器 */
+.footer {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 版权信息样式 */
+.footer p {
+    margin: 3px 0;
+    color: #444;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 版权年份样式 */
+.footer .copyright {
+    color: #444;
+    font-size: 12px;
+}
+
+/* ICP 备案号样式 */
+.footer .icp {
+    color: #444;
+    font-size: 11px;
+}
+
+/* 垂直居中辅助类 - iOS5兼容方案 */
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+}
+    

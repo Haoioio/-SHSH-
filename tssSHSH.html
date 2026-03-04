@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SHSH2查询网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles_tss.css">
+    <style type="text/css">
+        * {user-select: auto !important; -webkit-user-select: auto !important;}
+    </style><input type="hidden" id="inject_idm_text_selection">
+    <style></style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>SHSH2查找</h1>
+        <h5 style="font-family: 'Arial', sans-serif;">来源stor.tsssaver.1conan.com</h5>
+        <div class="button-container">
+            <!-- 包裹内容到button-content span中 -->
+            <a href="./CydiaSHSH.html" class="query-button button-tsssaver">
+                <span class="button-content">
+                    <img src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABda5MTO0dopC45UvA0Plr1ND5a9TdCXfU1QFv1NkFd9TVAW/Q2QV71OUNg9TQ/W/QyPVj0LjdR8DxHZqRQXZMTMDpaqUxXfP9hb5v/Y3Of/19unf9fcJ//WWeV/1VmlP9WZZT/W22c/2BvoP9fbZv/X2+c/19vm/9IVHj/LjpcqR4nQexZaJL/P09//zVHd/88SXX/lJu1/+Tm7v///////////+Xn7v+Wnbn/OUZ0/zZHdv87THz/UmKP/x0lPusbIz7xSVuG/zBBbf9OWn7/4+Xr/8nN2P9teZz/LkBx/y9Acv9we5//yczY/+Tm7P9QXID/L0Bu/0pdh/8bIz7xGCE58jxPef8sN13/4uTp/5KasP8rOWn/LT1w/19rlf88THv/KDtr/yo4ZP+Tm7H/4+Tq/y89YP87T3f/FR438RIbMfMxQmn/iZCh/8XI0v8fMFn/L0Bv/7W7zv/Kz9z//P39/7O5yv9RX4H/HSxV/8XI0f+Kj6H/L0Fp/xEbMvIOFiryITNY/+Di5v9eZn7/HCxW/5yiuP/8/f3/xcrZ/73D0//Kztr/o6m7/xYlS/9cZn3/4eLn/yg5YP8PGC7yCxIm8xgpTv//////EB0//xUjTP+GjqT/y8/a/5igu//T1uL//////+jq7v88RWT/Dxo8//////8cLFP/CxIo8wkQJfImNFX//////y44Wv+Cjaj/4uTt/6iy0f/r7fb/z9Xp/7rC2f+/xNX/QEx0/yo1VP//////IzJU/wkPI/MmLUDzW2SC/+bn6/98hJz/UmCH/7zC1v/b3+3/usXi/7rD4P/n6/P/t77R/4SNqP96gpn/5ujr/15ohf8pMEL1Nz1Q9m55mP+lq7z/1Nbf/2Nwk/+Rm7j/sLnR/9PY5v/a3+z/t7/U/5+mv/9baIr/09be/6arvf9we5n/NTxQ9T9GWfaGkKz/aHOT/+vs8f+1vcz/bHqa/3iFpP+PnLX/pbDE/3OCof9odZb/srjJ/+3u8v9td5b/g46r/0FHWvZKUGL3lp+8/3qGp/+LlbH/7e/z/9zf5/+jq8H/eYWk/3uFpf+hqMD/3N/n/+7v9P+Kk6//f4ur/5ihvP9JT2H3SU9g86Cqw/+RnL3/hpO1/4SQsv++w9X/8PH1////////////7/D1/77E1v+HkrT/ipa4/42Zu/+hqsT/TFJi82dvgaqGjKL/pbDJ/6ixzv+nsM7/o63J/6Gsx/+dqMT/oa3K/6Cqx/+krcr/prDN/6mzz/+krsn/hYyi/2dtgaqGk64TaXGEpFFXZ/FcYnP5XmR2+WJod/lkaXj6ZGp5+WZqefpjaXj5YGd2+V1kdPlcYXP5VVpo8WRsgKeGk64TAAAAAAAAAAAAALMTAAAAAAAAshMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC6EwAAAAAAAAAAAAAAAA==" class="button-icon" alt="Cydia图标">
+                    Cydia查询
+                </span></a>
+            <a href="./i4SHSH.html" class="query-button button-aisi">
+                <span class="button-content">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUwRDNFQzlBNENCMDExRTZCQ0UzODdFMTY1QkNBRjFDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUwRDNFQzlBNENCMDExRTZCQ0UzODdFMTY1QkNBRjFDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTBEM0VDOTg0Q0IwMTFFNkJDRTM4N0UxNjVCQ0FGMUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTBEM0VDOTk0Q0IwMTFFNkJDRTM4N0UxNjVCQ0FGMUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+ IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+ 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" class="button-icon" alt="爱思图标">
+                    爱思查询
+                </span>
+            </a>
+        </div>
+
+        <div class="flex-column">
+            <div class="flex-item">
+                <input type="text" id="inp_ecid" placeholder="输入ECID">
+            </div>
+        </div>
+
+        <button class="button" id="queryButton" onclick="redirectToBlob()">点击查询</button>
+        <button class="button hidden" id="openButton" onclick="openUrl()">打开</button>
+        <button class="button hidden" id="copyButton" onclick="copyToClipboard()">复制</button>
+        <button class="button hidden" id="downloadButton" onclick="downloadUrl()">下载</button>
+
+        <div id="urlContainer" class="hidden">
+            <label for="generatedUrl" style="font-weight: bold;">TSSSaver下载地址:</label>
+            <textarea id="generatedUrl" readonly=""></textarea>
+        </div>
+
+        <h2>ECID转换</h2>
+        <h5>(Hex格式(十六进制):2D13AS1SD21D21D1<br>Dec格式(十进制):123456789123455)</h5>
+
+        <div class="flex-column" style="margin-top: 20px;">
+            <div class="flex-item">
+                <select id="convertType">
+                    <option value="0">Hex to Dec (自动检测)</option>
+                    <option value="1">Dec to Hex (自动检测)</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <input type="text" id="convert_ecid" placeholder="输入ECID进行转换">
+            </div>
+            <div class="flex-item">
+                <button class="button" onclick="convertECID()">转换</button>
+            </div>
+        </div>
+
+        <div id="conversionResultContainer" style="margin-top: 10px; display: none;">
+            <label id="conversionResultTitle" style="font-weight: bold;"></label>
+            <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                <div>
+                    <span style="font-weight: bold;">检测类型:</span>
+                    <span id="detectedType"></span>
+                </div>
+                <div>
+                    <span style="font-weight: bold;">转换模式:</span>
+                    <span id="conversionMode"></span>
+                </div>
+            </div>
+            <textarea id="conversionResult" readonly=""></textarea>
+            <button class="button" onclick="copyConversionResult()">复制结果</button>
+        </div>
+    </div>
+
+    <footer class="footer vertical-center">
+        <div class="text-gray-400 text-sm mb-1 copyright">
+            Copyright © 2017~2026 </div>
+        <div class="text-gray-500 text-xs mb-1">
+            Kuzaos All rights reserved.
+        </div>
+    </footer>
+    <script>
+        var generatedUrl = '';
+        
+        // 检查浏览器是否支持剪贴板API
+        function isClipboardSupported() {
+            return 'clipboard' in navigator || 
+                   ('mozClipboard' in navigator || 'webkitClipboard' in navigator);
+        }
+        
+        function redirectToBlob() {
+            var ecid = document.getElementById('inp_ecid').value.trim();
+            var baseUrl = 'https://stor.tsssaver.1conan.com/shsh/';
+            if (ecid) {
+                var hasLetters = /[a-fA-F]/.test(ecid);
+                var finalEcid = hasLetters ? hexToDec(ecid.replace(/^0x/, '')) : ecid;
+                generatedUrl = baseUrl + encodeURIComponent(finalEcid);
+                document.getElementById('generatedUrl').value = generatedUrl;
+                document.getElementById('urlContainer').style.display = 'block';
+                toggleButtons(true);
+            } else {
+                alert("请填写 ECID！");
+            }
+        }
+        
+        function downloadUrl() {
+            var ecid = document.getElementById('inp_ecid').value.trim();
+            var downloadBaseUrl = 'https://stor.tsssaver.1conan.com/shsh/download/';
+            if (ecid) {
+                var hasLetters = /[a-fA-F]/.test(ecid);
+                var finalEcid = hasLetters ? hexToDec(ecid.replace(/^0x/, '')) : ecid;
+                window.open(downloadBaseUrl + encodeURIComponent(finalEcid), '_blank');
+            } else {
+                alert("请填写 ECID！");
+            }
+        }
+        
+        function copyToClipboard() {
+            if (isClipboardSupported()) {
+                navigator.clipboard.writeText(generatedUrl).then(function() {
+                    alert("URL已复制到剪贴板！");
+                }).catch(function(err) {
+                    fallbackCopyTextToClipboard(generatedUrl);
+                    alert("URL已复制到剪贴板！");
+                });
+            } else {
+                fallbackCopyTextToClipboard(generatedUrl);
+                alert("URL已复制到剪贴板！");
+            }
+        }
+        
+        // 旧版浏览器剪贴板兼容方案
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback copy command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function openUrl() {
+            window.open(generatedUrl, '_blank');
+        }
+        
+        // 进制检测与转换核心函数
+        function detectECIDType(ecid) {
+            ecid = ecid.trim().toUpperCase();
+            if (/^0X[0-9A-F]+$/.test(ecid)) ecid = ecid.substr(2); // 处理0x前缀
+            if (/[A-F]/.test(ecid)) return "hex";                // 包含十六进制字符
+            if (/^[0-9]+$/.test(ecid)) return "dec";             // 纯数字十进制
+            return null;                                          // 无法识别的格式
+        }
+        
+        function hexToDec(hex) {
+            return parseInt(hex.replace(/^0X/, ''), 16);
+        }
+        
+        function decToHex(dec) {
+            return parseInt(dec).toString(16).toUpperCase();
+        }
+        
+        // 输入监听兼容iOS5（使用oninput属性代替addEventListener）
+        document.getElementById('convert_ecid').oninput = function() {
+            var ecid = this.value.trim();
+            if (!ecid) return;
+            
+            var type = detectECIDType(ecid);
+            if (type === "hex") {
+                document.getElementById('convertType').value = "0";
+            } else if (type === "dec") {
+                document.getElementById('convertType').value = "1";
+            }
+        };
+        
+        // 转换主函数（支持自动检测+手动覆盖，移除递归调用）
+        function convertECID() {
+            var ecid = document.getElementById('convert_ecid').value.trim();
+            if (!ecid) {
+                alert("请输入ECID！");
+                return;
+            }
+            
+            var selectMode = document.getElementById('convertType').value;
+            var detectedType = detectECIDType(ecid);
+            var result, title, modeText, typeText;
+            var isConversionValid = true;
+            
+            // 根据选择模式执行转换（支持手动覆盖自动检测）
+            if (selectMode === "0") { // Hex to Dec
+                if (detectedType !== "hex") {
+                    // 手动选择Hex模式但输入非十六进制，提示并按十进制处理
+                    if (confirm("检测到输入可能为十进制，是否强制按十六进制转换？")) {
+                        result = hexToDec(ecid);
+                    } else {
+                        document.getElementById('convertType').value = "1";
+                        // 非递归处理方式
+                        return;
+                    }
+                } else {
+                    result = hexToDec(ecid);
+                }
+                title = "十六进制转十进制结果:";
+                modeText = "Hex to Dec (手动选择)";
+                typeText = detectedType === "hex" ? "十六进制" : "十进制(强制转换)";
+            } else { // Dec to Hex
+                if (detectedType !== "dec") {
+                    // 手动选择Dec模式但输入非十进制，提示并按十六进制处理
+                    if (confirm("检测到输入可能为十六进制，是否强制按十进制转换？")) {
+                        result = decToHex(ecid);
+                    } else {
+                        document.getElementById('convertType').value = "0";
+                        // 非递归处理方式
+                        return;
+                    }
+                } else {
+                    result = decToHex(ecid);
+                }
+                title = "十进制转十六进制结果:";
+                modeText = "Dec to Hex (手动选择)";
+                typeText = detectedType === "dec" ? "十进制" : "十六进制(强制转换)";
+            }
+            
+            // 显示转换结果
+            document.getElementById('conversionResultTitle').innerText = title;
+            document.getElementById('detectedType').innerText = typeText;
+            document.getElementById('conversionMode').innerText = modeText;
+            document.getElementById('conversionResult').value = result;
+            document.getElementById('conversionResultContainer').style.display = 'block';
+        }
+        
+        // 复制功能保持不变
+        function copyConversionResult() {
+            var result = document.getElementById('conversionResult').value;
+            if (isClipboardSupported()) {
+                navigator.clipboard.writeText(result).then(function() {
+                    alert("转换结果已复制到剪贴板！");
+                }).catch(function(err) {
+                    fallbackCopyTextToClipboard(result);
+                    alert("转换结果已复制到剪贴板！");
+                });
+            } else {
+                fallbackCopyTextToClipboard(result);
+                alert("转换结果已复制到剪贴板！");
+            }
+        }
+            
+        function toggleButtons(show) {
+            document.getElementById('queryButton').style.display = show ? 'none' : 'inline-block';
+            document.getElementById('openButton').style.display = show ? 'inline-block' : 'none';
+            document.getElementById('copyButton').style.display = show ? 'inline-block' : 'none';
+            document.getElementById('downloadButton').style.display = show ? 'inline-block' : 'none';
+        }
+    </script>
+
+</body>
+
+</html>

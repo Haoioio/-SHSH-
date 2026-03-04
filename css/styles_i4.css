@@ -1,0 +1,423 @@
+/* 基础样式 - 重点调整容器宽度 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    /* 禁止iOS文本自动调整大小 */
+}
+
+body {
+    background: #1c1c1e;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    /* 居中显示并限制最大宽度 */
+    display: flex;
+    justify-content: center;
+}
+
+/* 主容器宽度控制 - 核心调整 */
+.page-wrapper {
+    width: 100%;
+    max-width: 510px;
+    /* 限制最大宽度为510px */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.84);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.block-title {
+    color: #fff;
+    margin: 10px 0 15px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 核心修改：iOS版本单元格内两行样式 */
+.ios-version-cell {
+    cursor: pointer;
+    color: #fff;
+    padding: 8px 4px;
+    /* 适当增加内边距，避免内容拥挤 */
+    vertical-align: middle;
+    /* 单元格内容垂直居中 */
+}
+
+/* 版本号主文本样式 */
+.version-main {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* 编译号次要文本样式 */
+.version-build {
+    font-size: 12px;
+    color: #bbb;
+    /* 浅色区分，突出主版本号 */
+    line-height: 1.2;
+    margin-top: 4px;
+    /* 与主版本号保持间距 */
+}
+
+/* 修复Generator值溢出问题 */
+.gen-value {
+    word-wrap: break-word;
+    /* 允许长单词换行 */
+    overflow-wrap: break-word;
+    /* 溢出时强制换行 */
+    white-space: normal;
+    /* 取消强制不换行 */
+    vertical-align: middle;
+    /* 与版本号单元格垂直对齐 */
+}
+
+/* 表格基础样式保持3列结构 */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid #444;
+}
+
+.result-table th,
+.result-table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    border-left: 1px solid #444;
+}
+
+.result-table th:last-child,
+.result-table td:last-child {
+    border-right: 1px solid #444;
+}
+
+/* 调整列宽比例，给版本列足够空间显示两行内容 */
+.result-table th:first-child {
+    width: 20%;
+}
+
+/* iOS版本列（两行显示） */
+.result-table th:nth-child(2) {
+    width: 45%;
+}
+
+/* Generator值列 */
+.result-table th:last-child {
+    width: 35%;
+}
+
+/* 操作列 */
+.result-table th {
+    background: rgba(30, 30, 30, 0.9);
+    font-weight: bold;
+}
+
+.result-table tr:hover {
+    background: rgba(50, 50, 50, 0.5);
+}
+
+/* 表单样式 */
+.form-group {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 14px;
+    background: rgba(50, 50, 50, 0.8);
+    color: #fff;
+    -webkit-appearance: none;
+    /* 移除iOS默认样式 */
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #0a84ff;
+}
+
+/* 按钮样式 */
+.btn {
+    background: #0a84ff;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn.disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn.active {
+    background: #0056b3;
+}
+
+#submitBtn {
+    width: 100%;
+}
+
+/* 分页样式 */
+.pagination-container {
+    margin-top: 10px;
+}
+
+.pagination {
+    display: -webkit-box;
+    /* 旧版Flexbox兼容 */
+    display: box;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-box-pack: center;
+    box-pack: center;
+    margin: 10px 0;
+    gap: 5px;
+}
+
+.page-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.current-page-info {
+    color: #ddd;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* 通知样式 */
+.notification {
+    padding: 10px 0;
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error-notification {
+    color: #ff6b6b;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* 其他样式 */
+.data-source {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #282828;
+    border-radius: 4px;
+}
+
+.data-source a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+.tsssaver-container {
+    margin: 8px 0;
+    padding: 8px;
+    background-color: rgba(30, 30, 50, 0.3);
+    border-radius: 4px;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.tsssaver-link {
+    color: #0a84ff;
+    text-decoration: underline;
+    word-wrap: break-word;
+}
+
+.button-container {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.query-button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 3px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.browser-error {
+    color: #dc3545;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #f5c6cb;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.button-tsssaver {
+    background-color: #444;
+}
+
+.button-tsssaver:hover {
+    background-color: #ff4e4e;
+}
+
+.button-aisi {
+    background-color: #444;
+}
+
+.button-aisi:hover {
+    background-color: #38b000;
+}
+
+/* 批量下载按钮样式 */
+.batch-download-container {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.batch-download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.batch-download-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 进度条样式 */
+.download-progress {
+    margin-top: 10px;
+    height: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+
+/* 响应式调整 - 确保小屏幕正常显示两行内容 */
+@media (max-width: 510px) {
+    .page-wrapper {
+        padding: 0 5px;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: 6px 3px;
+        /* 小屏幕减少内边距 */
+        font-size: 13px;
+    }
+
+    /* 小屏幕调整列宽，优先保证版本列两行显示 */
+    .result-table th:first-child {
+        width: 20%;
+    }
+
+    /* iOS版本列（两行显示） */
+    .result-table th:nth-child(2) {
+        width: 45%;
+    }
+
+    /* Generator值列 */
+    .result-table th:last-child {
+        width: 35%;
+    }
+
+    /* 操作列 */
+
+    .version-main {
+        font-size: 14px;
+    }
+
+    .version-build {
+        font-size: 11px;
+    }
+
+    .batch-download-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+.button-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 5px;
+}
